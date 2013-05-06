@@ -170,58 +170,60 @@
 
 		<h3>.expandByVector([page:Vector2 vector]) [page:Box2]</h3>
 		<div>
-		vector -- Amount to expand each dimension.
+		vector -- Amount to expand this box in each dimension.
 		</div>
 		<div>
-		Expands this box equilaterally by *vector*. The following example demonstrates </br>
-		why this fact is significant: </br>
-		
-		</div>
-
-		<h3>.copy([page:todo box]) [page:todo]</h3>
-		<div>
-		box -- todo
-		</div>
-		<div>
-		todo
+		Expands this box equilaterally by *vector*. The width of this box will be
+		expanded by the x component of *vector* in both directions. The height of 
+		this box will be expanded by the y component of *vector* in both directions.
 		</div>
 
-		<h3>.makeEmpty() [page:todo]</h3>
+		<h3>.copy([page:Box2 box]) [page:Box2]</h3>
 		<div>
-		todo
+		box -- Box to copy.
+		</div>
+		<div>
+		Copies the values of *box* to this box.
 		</div>
 
-		<h3>.center([page:todo optionalTarget]) [page:todo]</h3>
+		<h3>.makeEmpty() [page:Box2]</h3>
 		<div>
-		optionalTarget -- todo
-		</div>
-		<div>
-		todo
+		Makes this box empty.
 		</div>
 
-		<h3>.distanceToPoint([page:todo point]) [page:todo]</h3>
+		<h3>.center([page:Vector2 optionalTarget]) [page:Vector2]</h3>
 		<div>
-		point -- todo
+		optionalTarget -- If specified, the result will be copied here.
 		</div>
 		<div>
-		todo
-		</div>
-
-		<h3>.containsPoint([page:todo point]) [page:todo]</h3>
-		<div>
-		point -- todo
-		</div>
-		<div>
-		todo
+		Returns the center point of this box.
 		</div>
 
-		<h3>.setFromCenterAndSize([page:todo center], [page:todo size]) [page:todo]</h3>
+		<h3>.distanceToPoint([page:Vector2 point]) [page:Float]</h3>
 		<div>
-		center -- todo <br />
-		size -- todo
+		point -- Point to measure distance to.
 		</div>
 		<div>
-		todo
+		Returns the distance from any edge of this box to the specified point. </br>
+		If the point lies inside of this box, the distance will be 0.
+		</div>
+
+		<h3>.containsPoint([page:Vector2 point]) [page:Boolean]</h3>
+		<div>
+		point -- Point to check for inclusion.
+		</div>
+		<div>
+		Returns true if the specified point lies within the boundaries of this box.
+		</div>
+
+		<h3>.setFromCenterAndSize([page:Vector2 center], [page:Vector2 size]) [page:Box2]</h3>
+		<div>
+		center -- Desired center position of the box. <br />
+		size -- Desired x and y dimensions of the box. 
+		</div>
+		<div>
+		Centers this box on *center* and sets this box's width and height to the values specified
+		in *size*.
 		</div>
 
 		<h2>Source</h2>
